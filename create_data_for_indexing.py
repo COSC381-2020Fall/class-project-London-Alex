@@ -4,7 +4,6 @@ import json
 paths = [str(x) for x in Path('./youtube_data').glob('**/*.json')]
 results = []
 for path in paths:
-    print(path)
     with open(path, 'r') as f:
         data = json.load(f)
         # insert your code here
