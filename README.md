@@ -32,3 +32,22 @@ Safety Update for the Continental Divide Trail | Update to May 2019 Warning Vide
 Meet some of the "trail angels" along the Continental Divide Trail  
 Continental Divide Trail Documentary: CHOOSE YOUR ADVENTURE  
 Adventure Up High  -  Hiking the Continental Divide Trail Documentary  
+
+## Steps to Execute Code Individually
+While I've written mainScript.sh for the user's convenience, you can fellow the below steps if you'd like to execute each part of code individually.
+
+1. Modify config.py with your API key and CSE ID
+2. python3 cse.py > google\_search.txt
+    - Retrieves search results from the custom search engine
+3. grep "'link'" google\_search.txt | awk -F 'v=' '{print substr($2,1,11)}' > video\_ids.txt
+    - Extracts video ids from the search results
+4. mkdir -p youtube\_data
+5. bash download\_youtube\_data\_batch.sh
+    - Retrieves video data for each video
+6. python3 create\_data\_for\_indexing.py
+    - Extracts id, title, and description for each video and saves it in JSON format
+7. python3 create\_whoosh\_index.py
+    - Create the whoosh search index
+8. python3 query\_on\_whoosh.py
+    - Execute an example query and return 10 video titles
+ 
