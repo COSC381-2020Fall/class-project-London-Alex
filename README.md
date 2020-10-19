@@ -38,3 +38,9 @@ While I've written mainScript.sh for the user's convenience, you can follow the 
     - <queryTerm>: The term to be searched
     - <pageNum>: Which page of results to return
     - <numResults>: The number of results per page
+
+## Technologies
+- Custom Search Engine
+- YouTube Data API
+- Whoosh
+- Python
