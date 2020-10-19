@@ -11,4 +11,4 @@ python3 create_data_for_indexing.py
 echo "Executed create_data_for_indexing.py"
 python3 create_whoosh_index.py
 echo "Created whoosh index"
-python3 query_on_whoosh.py
+echo "To search: python3 query_on_whoosh.py <queryTerm> <pageNum> <numResults>"

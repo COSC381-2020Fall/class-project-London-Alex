@@ -13,28 +13,14 @@
     - Replace placeholder text in config.py with your API key and CSE ID.
 3. Enter 'bash mainScript.sh' to execute each python file and script in the correct order.
 4. Note that for my particular search term("Continental Divide"), 12 duplicate video ids are returned, so we end up with only 88 unique video descriptions.
-5. mainScript.sh will print each step as it's accomplished and then display the results from the whoosh description search. It should display the titles for 10 videos that contain the word 'trail' in the description.
-
-## Expected Output of mainScript.sh
-Executed cse.py Collected search results  
-Created video\_ids.txt  
-Executed download\_youtube\_data\_batch.sh Created youtube\_data folder  
-Executed create\_data\_for\_indexing.py  
-Created whoosh index  
-<Top 10 Results for Term('description', 'trail') runtime=0.00040558500040788203>  
-Single Track Riding on the Continental Divide Trail Headed West from Monarch Pass  
-Finding My Way along the Continental Divide Trail  
-CDT Thru Hike 2018 Ep 1 -  Crazy Cook to Lordsburg - Continental Divide Trail Documentary  
-The people of the Continental Divide Trail  
-Walking the Great Divide: A Journey Along the Continental Divide Trail Trailer  
-3 Tips for Thru Hiking the CDT (Continental Divide Trail)  
-Safety Update for the Continental Divide Trail | Update to May 2019 Warning Video  
-Meet some of the "trail angels" along the Continental Divide Trail  
-Continental Divide Trail Documentary: CHOOSE YOUR ADVENTURE  
-Adventure Up High  -  Hiking the Continental Divide Trail Documentary  
+5. mainScript.sh will print each step as it's accomplished and end after the whoosh index has been created. 
+6. Enter 'python3 query\_on\_whoosh.py <queryTerm> <pageNum> <numResults>' to search
+    - <queryTerm>: The term to be searched
+    - <pageNum>: Which page of results to return
+    - <numResults>: The number of results per page
 
 ## Steps to Execute Code Individually
-While I've written mainScript.sh for the user's convenience, you can fellow the below steps if you'd like to execute each part of code individually.
+While I've written mainScript.sh for the user's convenience, you can follow the below steps if you'd like to execute each part of code individually.
 
 1. Modify config.py with your API key and CSE ID
 2. python3 cse.py > google\_search.txt
@@ -48,6 +34,7 @@ While I've written mainScript.sh for the user's convenience, you can fellow the 
     - Extracts id, title, and description for each video and saves it in JSON format
 7. python3 create\_whoosh\_index.py
     - Create the whoosh search index
-8. python3 query\_on\_whoosh.py
-    - Execute an example query and return 10 video titles
- 
+8. Enter 'python3 query\_on\_whoosh.py <queryTerm> <pageNum> <numResults>' to search
+    - <queryTerm>: The term to be searched
+    - <pageNum>: Which page of results to return
+    - <numResults>: The number of results per page
