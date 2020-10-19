@@ -14,10 +14,10 @@
 3. Enter 'bash mainScript.sh' to execute each python file and script in the correct order.
 4. Note that for my particular search term("Continental Divide"), 12 duplicate video ids are returned, so we end up with only 88 unique video descriptions.
 5. mainScript.sh will print each step as it's accomplished and end after the whoosh index has been created. 
-6. Enter 'python3 query\_on\_whoosh.py <queryTerm> <pageNum> <numResults>' to search
-    - <queryTerm>: The term to be searched
-    - <pageNum>: Which page of results to return
-    - <numResults>: The number of results per page
+6. Enter 'python3 query\_on\_whoosh.py \<queryTerm\> \<pageNum\> \<numResults\>' to search
+    - \<queryTerm\>: The term to be searched
+    - \<pageNum\>: Which page of results to return
+    - \<numResults\>: The number of results per page
 
 ## Steps to Execute Code Individually
 While I've written mainScript.sh for the user's convenience, you can follow the below steps if you'd like to execute each part of code individually.
@@ -34,10 +34,10 @@ While I've written mainScript.sh for the user's convenience, you can follow the 
     - Extracts id, title, and description for each video and saves it in JSON format
 7. python3 create\_whoosh\_index.py
     - Create the whoosh search index
-8. Enter 'python3 query\_on\_whoosh.py <queryTerm> <pageNum> <numResults>' to search
-    - <queryTerm>: The term to be searched
-    - <pageNum>: Which page of results to return
-    - <numResults>: The number of results per page
+8. Enter 'python3 query\_on\_whoosh.py \<queryTerm\> \<pageNum\> \<numResults\>' to search
+    - \<queryTerm\>: The term to be searched
+    - \<pageNum\>: Which page of results to return
+    - \<numResults\>: The number of results per page
 
 ## Technologies
 - Custom Search Engine
