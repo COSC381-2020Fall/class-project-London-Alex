@@ -47,3 +47,5 @@ indexdir/
 youtube_data/
 *.pyc
 *.pyo
+test_flask.py
+test_module.py
