@@ -15,3 +15,10 @@ def handle_query():
     search_page = int(request.args.get("p"))
     search_results, num_hits, num_pages = query_on_whoosh.performQuery(search_term, search_page, 10)
     return jsonify({"query_term": search_term, "num_hits": num_hits, "num_pages": num_pages, "search_results": search_results})
+
+@app.route("/query_view", strict_slashes=False)
+def handle_query_view():
+    search_term = request.args.get("q")
+    search_page = int(request.args.get("p"))
+    search_results, num_hits, num_pages = query_on_whoosh.performQuery(search_term, search_page, 10)
+    return render_template("query.html", results = search_results)

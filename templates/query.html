@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Search</title>
+	</head>
+	<body>
+		{% for item in results %}
+		<p>{{ item.Title }}</p>
+        <p>{{ item.Link }}</p>
+        {% endfor %}
+	</body>
+</html>
