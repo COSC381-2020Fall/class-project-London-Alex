@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Search</title>
-	</head>
-	<body>
-		{% for item in results %}
-		<p>{{ item.Title }}</p>
-        <p>{{ item.Link }}</p>
-        {% endfor %}
-	</body>
-</html>
+{% extends "layout.html" %}
+
+{% block body %}
+	<div><a href="/about">About This Site</a></div>
+	
+	<form action="success" method="GET">
+		<input name="new_data" type="text">
+		<input type="submit" value="request">
+	</form>
+	
+	<form action="/query_view" method="GET">
+		<input name="q" type="text">
+		<input type="submit" value="search">
+	</form>
+
+	{% for item in results %}
+	<h2>{{ item.Title }}</h2>
+	<p><a href={{ item.Link }}>{{ item.Link }}</a></p>
+	<p>{{ item.Description | safe }}</p>
+	<br>
+	<br>
+	{% endfor %}
+
+	{% for page_index in range(1,page_count+1) %}
+	<p><a href=/query_view?q={{ query_term }}&p={{ page_index }}>{{ page_index }}</a></p>
+	{% endfor %}
+
+{% endblock %}
