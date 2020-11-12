@@ -2,8 +2,10 @@ import sys
 from whoosh.qparser import QueryParser
 from whoosh import scoring
 from whoosh.index import open_dir
+from whoosh.lang.porter import stem
 
 def performQuery(queryTerm, pageNum, itemsPerPage):
+    queryTerm = stem(queryTerm)
     ix = open_dir("indexdir")
     with ix.searcher(weighting=scoring.Frequency) as searcher:
         queryParser = QueryParser("description", ix.schema)

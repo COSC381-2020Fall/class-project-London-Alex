@@ -25,4 +25,10 @@
 	<p><a href=/query_view?q={{ query_term }}&p={{ page_index }}>{{ page_index }}</a></p>
 	{% endfor %}
 
+	<ul>
+		{% for history_item in history_list %}
+		<li>{{ history_item[1] }}</li>
+		{% endfor %}
+	</ul>
+
 {% endblock %}
