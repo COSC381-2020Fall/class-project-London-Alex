@@ -39,7 +39,7 @@ Thumbs.db
 
 
 #Below added by Alex London
-.vscode/settings.json
+.vscode/
 data_for_indexing.json
 google_search.txt
 video_ids.txt
@@ -49,3 +49,5 @@ youtube_data/
 *.pyo
 test_flask.py
 test_module.py
+config.py
+*.yml

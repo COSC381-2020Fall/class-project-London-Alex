@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Settings</h1>
+    <p>Note: lack of checkmark in box does not indicate that feature is currently disabled.</p>
+    <p>To disable, you must click submit with the checkbox unchecked.</p>
+
+    <form action="updatedSettings" method="GET">
+        <input id="history" name="search_history" value="enable" type="checkbox">
+        <label for="history">Enable Search History</label><br>
+		<input type="submit" value="Submit">
+	</form>
+    
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>History of Past Searches</h1>
+
+    <ul>
+		{% for history_item in history_list %}
+		<li>
+            Topic: {{ history_item[1] }} <br>
+            Term: {{ history_item[2] }} <br>
+            Time: {{ history_item[3] }} <br>
+            <button><a href="/deletedHistory?id={{ history_item[0] }}">Delete</a></button>
+            <br>
+        </li>
+		{% endfor %}
+	</ul>
+    
+{% endblock %}
